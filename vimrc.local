@@ -1,0 +1,278 @@
+"======================================================="
+" Vundle Bundles O'Fun
+"======================================================="
+  filetype off
+
+  set rtp+=~/.vim/bundle/vundle/
+  call vundle#rc()
+
+  " let Vundle manage Vundle
+  Bundle 'gmarik/vundle.git'
+
+  " system
+  Bundle 'ervandew/supertab.git'
+  Bundle 'Lokaltog/vim-powerline.git'
+  Bundle 'majutsushi/tagbar'
+  Bundle 'kien/ctrlp.vim'
+  Bundle 'c9s/bufexplorer'
+  Bundle 'vim-scripts/netrw.vim.git'
+  Bundle 'mileszs/ack.vim.git'
+  Bundle 'mhinz/vim-startify.git'
+
+  " editing
+  Bundle 'surround.vim'
+  Bundle 'rstacruz/sparkup.git', {'rtp': 'vim/'}
+  Bundle 'scrooloose/nerdcommenter.git'
+  Bundle 'tsaleh/vim-matchit.git'
+  Bundle 'nathanaelkane/vim-indent-guides.git'
+  Bundle 'editorconfig/editorconfig-vim.git'
+  Bundle 'SirVer/ultisnips'
+
+  " syntax
+  Bundle 'leshill/vim-json'
+  Bundle 'pangloss/vim-javascript'
+  Bundle 'kchmck/vim-coffee-script'
+  Bundle 'mustache/vim-mode.git'
+  Bundle 'elzr/vim-json'
+  Bundle 'tjdunklee/vim-csharp.git'
+  Bundle 'wookiehangover/jshint.vim'
+
+  " git
+  Bundle 'tpope/vim-git'
+  Bundle 'tpope/vim-fugitive'
+
+  " nerdtree
+  Bundle 'scrooloose/nerdtree.git'
+
+  " colors
+  Bundle 'altercation/vim-colors-solarized.git'
+
+  filetype plugin indent on
+
+
+"======================================================="
+" NERDTREE settings
+"======================================================="
+  let NERDTreeMinimalUI= 1
+
+  let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$',
+                     \ '\.o$', '\.so$', '\.egg$', '^\.git$', '\.DS_STORE',
+                     \ '\.svn' ]
+
+  let NERDTreeShowFiles=1           " Show hidden files, too
+  let NERDTreeShowHidden=1
+  let NERDTreeQuitOnOpen=1
+  let NERDTreeHighlightCursorline=1 " Highlight the selected entry in the tree
+  let NERDTreeMouseMode=2           " Use a single click to fold/unfold directories and a double click to open files
+  let NERDChristmasTree=1           " More colorful
+  let NERDTreeWinPos=0              " 0 for left aligned, 1 for right
+
+
+"======================================================="
+" Global settings
+"======================================================="
+  set modelines=0
+  set ruler                                    " show position in file
+  set number                                   " show line numbers
+  set history=1000                             " limit :cmdline history
+
+  set novisualbell                             " no blinking .
+  set nowrap                                   " no carriage returns
+  set noerrorbells                             " no noise.
+
+  set laststatus=2                             " always show status line.
+  set tabstop=2                                " number of spaces of tab character
+  set shiftwidth=2                             " number of spaces to (auto)indent
+  set smarttab
+  set smartindent
+  set expandtab
+
+  set nostartofline
+  set noautowrite                              " don't write on :next
+  set autoindent                               " auto indents the next new line
+  set timeoutlen=200                           " shortens the lag time with using leader
+  set lz                                       " lazy redraw - when macros are running don't redraw
+  set backspace=start,indent
+  set backspace=2                              " make backspace work the way it should
+  set whichwrap+=<,>,h,l                       " make backspace and cursor keys wrap accordingly
+  set incsearch                                " set search to automatically show the next match while typing
+  set ignorecase                               " make searches case-insensitive
+  set cursorline                               " turn on line highlighting
+  set hlsearch                                 " turn on highlighted search
+  set laststatus=2                             " always have the status bar visible
+  set hidden                                   " allow movement to another buffer without saving the current one
+  set clipboard+=unnamed                       " share clipboard
+  set fo-=r
+  set numberwidth=2                            " set the number width spacing
+  set dictionary=/usr/share/dict/words         " more words
+
+  set nobackup
+  set nowritebackup
+  set noswapfile   
+
+  set cindent
+  set indentkeys-=0#            " do not break indent on #
+  set cinkeys-=0#
+  set cinoptions=:s,ps,ts,cs
+  set cinwords=if,else,while,do
+  set cinwords+=for,switch,case
+
+  set wildmode=full "complete first full match
+  set wildignore=*.dll,*.exe,*.pyc,*.pyo,*.egg,*.class
+  set wildignore+=*.jpg,*.gif,*.png,*.o,*.obj,*.bak,*.rbc
+  set wildignore+=Icon*,\.DS_Store,*.out,*.scssc,*.sassc
+  set wildignore+=.git/*,.hg/*,.svn/*,*/swp/*,*/undo/*,Gemfile.lock
+  set wildmenu "show completion matches above command line
+
+  if has('gui_running')
+    set colorcolumn=80   
+    colorscheme codeschool 
+    set titlestring=
+    set titlestring+=%f\       " file name
+    set titlestring+=%h%m%r%w  " flags
+    set titlestring+=\ >\ %{substitute(getcwd(),\ $HOME,\ '~',\ '')} " working directory
+
+    set guioptions=egmtc 
+    set antialias
+
+    if has('mac')
+      set macmeta
+      set guifont=Inconsolata-dz\ For\ Powerline:h13
+      set fuoptions=maxvert,maxhorz
+    endif
+  else
+    colorscheme solarized 
+    set background=dark
+  endif
+
+  " resize splits on windows resize 
+  au VimResized * exe "normal! \<c-w>="
+
+  " jump to last position of buffer when opening
+  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
+                           \ exe "normal g'\"" | endif
+
+  " set syntax to HTML for razor files
+  au BufReadPost *.cshtml set syntax=html
+
+
+"======================================================="
+" Key Bindings 
+"======================================================="
+  " basic settings, [leader, secondary <ESC>, reindent, file-explorer]
+  let mapleader = ","
+  imap <S-space> <Esc>
+  map <leader>= <c-W>=
+  map <leader>n :NERDTreeToggle<CR>
+
+  " configuration resetting
+  nmap <silent> <leader>sv :so $MYVIMRC<CR>
+  map <leader>C :call OpenConfig()<CR>
+
+  " folding
+  map <leader><space> zf
+  map <leader><S-space> zo
+
+  " H/L is more like a natural vim motion than 0/$
+  map H 0
+  map L $
+  map T <C-v>
+
+  " add empty lines with no insert mode
+  map <S-enter> O<Esc>
+  map <enter> o<Esc>
+
+  " remove windows character returns
+  map <Leader>m :%s/^M//<CR>
+
+  nnoremap <leader>/ :set hlsearch!<CR>
+  noremap <leader>ss :call StripWhitespace()<CR>
+
+  " better j/k overwrapped lines
+  nnoremap j gj
+  nnoremap k gk
+
+  " delete char without yank 
+  noremap x "_x
+  noremap X "_X
+
+  " reselect visual block after indent
+  vnoremap < <gv
+  vnoremap > >gv
+
+  " keep search results in the center of the screen
+  nnoremap <silent> n nzz
+  nnoremap <silent> N Nzz
+  nnoremap <silent> * *zz
+  nnoremap <silent> # #zz
+  nnoremap <silent> g* g*zz
+  nnoremap <silent> g# g#zz
+
+  " window
+  nmap <leader>sw<left>  :topleft  vnew<CR>
+  nmap <leader>sw<right> :botright vnew<CR>
+  nmap <leader>sw<up>    :botleft  new<CR>
+  nmap <leader>sw<down>  :botright new<CR>
+
+  " move between buffers with arrow keys
+  nmap <silent> <Up> :wincmd k<CR>
+  nmap <silent> <Down> :wincmd j<CR>
+  nmap <silent> <Left> :wincmd h<CR>
+  nmap <silent> <Right> :wincmd l<CR>
+
+  " buffer
+  map <leader><leader> <c-W><c-W> 
+  nmap <leader>s<left>   :leftabove  vnew<CR>
+  nmap <leader>s<right>  :rightbelow vnew<CR>
+  nmap <leader>s<up>     :leftabove  new<CR>
+  nmap <leader>s<down>   :rightbelow new<CR>
+
+  " disabled keys
+  map K <nop>
+
+  " source: http://mislav.uniqpath.com/2011/12/vim-revisited/
+  " double percentage sign in command mode is expanded
+  " to directory of current file - http://vimcasts.org/e/14
+  cnoremap %% <C-R>=expand('%:h').'/'<cr>
+
+  " remove extra line spaces
+  nnoremap <silent> <leader><leader>c :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>:retab<CR>
+
+  " Plugin Mappings
+  let g:Powerline_symbols = 'fancy'
+  let g:ctrlp_map = '<leader>f'
+  let g:sparkupExecuteMapping = '<leader>e'
+
+  nmap <leader>t :TagbarToggle<CR>
+
+
+"======================================================="
+" Startify Fun Times
+"======================================================="
+  let g:startify_list_order = [
+    \ [' Stuff I Play With'],
+    \ 'bookmarks',
+    \ [' Recently Hacked Files'],
+    \ 'files',
+    \ [' Saved Sessions'],
+    \ 'sessions'
+    \ ]
+
+  let g:startify_bookmarks = [
+    \ '~/.vim/.vimrc',
+    \ '~/.bash_profile',
+    \ '~/.bash_profile.private',
+    \ ]
+
+  let g:startify_custom_header = [
+    \'  ########  ##     ## ##    ## ##    ##  ######   ',
+    \'  ##     ## ##     ## ###   ## ##   ##  ##    ##  ',
+    \'  ##     ## ##     ## ####  ## ##  ##   ##        ',
+    \'  ##     ## ##     ## ## ## ## #####     ######   ',
+    \'  ##     ## ##     ## ##  #### ##  ##         ##  ',
+    \'  ##     ## ##     ## ##   ### ##   ##  ##    ##  ',
+    \'  ########   #######  ##    ## ##    ##  ######   ',
+    \'                                                  ',
+    \'                                                  ',
+    \'                                                  ',
+    \ ]
