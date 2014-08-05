@@ -29,11 +29,10 @@
   Bundle 'SirVer/ultisnips'
 
   " syntax
-  Bundle 'leshill/vim-json'
+  Bundle 'elzr/vim-json.git'
   Bundle 'pangloss/vim-javascript'
   Bundle 'kchmck/vim-coffee-script'
   Bundle 'mustache/vim-mode.git'
-  Bundle 'elzr/vim-json'
   Bundle 'tjdunklee/vim-csharp.git'
   Bundle 'wookiehangover/jshint.vim'
 
@@ -71,46 +70,20 @@
 "======================================================="
 " Global settings
 "======================================================="
-  set modelines=0
-  set ruler                                    " show position in file
-  set number                                   " show line numbers
-  set history=1000                             " limit :cmdline history
-
   set novisualbell                             " no blinking .
-  set nowrap                                   " no carriage returns
-  set noerrorbells                             " no noise.
 
-  set laststatus=2                             " always show status line.
-  set tabstop=2                                " number of spaces of tab character
-  set shiftwidth=2                             " number of spaces to (auto)indent
   set smarttab
-  set smartindent
-  set expandtab
 
   set nostartofline
   set noautowrite                              " don't write on :next
-  set autoindent                               " auto indents the next new line
-  set timeoutlen=200                           " shortens the lag time with using leader
   set lz                                       " lazy redraw - when macros are running don't redraw
   set backspace=start,indent
   set backspace=2                              " make backspace work the way it should
   set whichwrap+=<,>,h,l                       " make backspace and cursor keys wrap accordingly
-  set incsearch                                " set search to automatically show the next match while typing
-  set ignorecase                               " make searches case-insensitive
-  set cursorline                               " turn on line highlighting
-  set hlsearch                                 " turn on highlighted search
-  set laststatus=2                             " always have the status bar visible
-  set hidden                                   " allow movement to another buffer without saving the current one
   set clipboard+=unnamed                       " share clipboard
   set fo-=r
   set numberwidth=2                            " set the number width spacing
-  set dictionary=/usr/share/dict/words         " more words
 
-  set nobackup
-  set nowritebackup
-  set noswapfile   
-
-  set cindent
   set indentkeys-=0#            " do not break indent on #
   set cinkeys-=0#
   set cinoptions=:s,ps,ts,cs
@@ -118,25 +91,14 @@
   set cinwords+=for,switch,case
 
   set wildmode=full "complete first full match
-  set wildignore=*.dll,*.exe,*.pyc,*.pyo,*.egg,*.class
-  set wildignore+=*.jpg,*.gif,*.png,*.o,*.obj,*.bak,*.rbc
-  set wildignore+=Icon*,\.DS_Store,*.out,*.scssc,*.sassc
-  set wildignore+=.git/*,.hg/*,.svn/*,*/swp/*,*/undo/*,Gemfile.lock
-  set wildmenu "show completion matches above command line
 
   if has('gui_running')
-    set colorcolumn=80   
-    colorscheme codeschool 
-    set titlestring=
-    set titlestring+=%f\       " file name
-    set titlestring+=%h%m%r%w  " flags
+    colorscheme codeschool
     set titlestring+=\ >\ %{substitute(getcwd(),\ $HOME,\ '~',\ '')} " working directory
 
-    set guioptions=egmtc 
-    set antialias
+    set guioptions=egmtc
 
     if has('mac')
-      set macmeta
       set guifont=Inconsolata-dz\ For\ Powerline:h13
       set fuoptions=maxvert,maxhorz
     endif
@@ -144,13 +106,6 @@
     colorscheme solarized 
     set background=dark
   endif
-
-  " resize splits on windows resize 
-  au VimResized * exe "normal! \<c-w>="
-
-  " jump to last position of buffer when opening
-  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
-                           \ exe "normal g'\"" | endif
 
   " set syntax to HTML for razor files
   au BufReadPost *.cshtml set syntax=html
@@ -188,17 +143,9 @@
   nnoremap <leader>/ :set hlsearch!<CR>
   noremap <leader>ss :call StripWhitespace()<CR>
 
-  " better j/k overwrapped lines
-  nnoremap j gj
-  nnoremap k gk
-
   " delete char without yank 
   noremap x "_x
   noremap X "_X
-
-  " reselect visual block after indent
-  vnoremap < <gv
-  vnoremap > >gv
 
   " keep search results in the center of the screen
   nnoremap <silent> n nzz
@@ -259,7 +206,7 @@
     \ ]
 
   let g:startify_bookmarks = [
-    \ '~/.vim/.vimrc',
+    \ '~/dotfiles/vimrc.local',
     \ '~/.bash_profile',
     \ '~/.bash_profile.private',
     \ ]
