@@ -190,6 +190,11 @@
   let g:ctrlp_map = '<leader>f'
   let g:sparkupExecuteMapping = '<leader>e'
 
+  " UltiSnips
+  let g:UltiSnipsExpandTrigger="<tab>"
+  let g:UltiSnipsJumpForwardTrigger="<c-b>"
+  let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
   nmap <leader>t :TagbarToggle<CR>
 
 
@@ -209,6 +214,7 @@
     \ '~/dotfiles/vimrc.local',
     \ '~/.bash_profile',
     \ '~/.bash_profile.private',
+    \ '~/.vim/UltiSnips/all.snippets'
     \ ]
 
   let g:startify_custom_header = [
