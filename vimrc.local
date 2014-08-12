@@ -195,6 +195,9 @@
   let g:UltiSnipsJumpForwardTrigger="<c-b>"
   let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
+  " JSON
+  let g:vim_json_syntax_conceal = 0
+
   nmap <leader>t :TagbarToggle<CR>
 
 
