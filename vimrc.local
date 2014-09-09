@@ -89,6 +89,7 @@
   set cinoptions=:s,ps,ts,cs
   set cinwords=if,else,while,do
   set cinwords+=for,switch,case
+  set iskeyword-=_
 
   set wildmode=full "complete first full match
 
