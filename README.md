@@ -14,7 +14,15 @@ dotfiles](https://github.com/space150/dotfiles) that these depend on. Then you c
 mkdir tjdunklee
 cd tjdunklee
 git clone https://github.com/tjdunklee/dotfiles.git
-rcup -d dotfiles -x README.md
+cd
+rcup -d tjdunklee/dotfiles -x README.md
+```
+
+If you don't have it already, be sure to install Vundle.
+
+```
+cd
+git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
 
 When MacVim is running, make sure to run Vundle to grab all the plugins.
