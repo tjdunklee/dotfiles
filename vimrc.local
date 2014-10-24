@@ -47,6 +47,7 @@
 
   " colors
   Bundle 'altercation/vim-colors-solarized.git'
+  Bundle 'tjdunklee/vim-colorschemes'
 
   call vundle#end()
   filetype plugin indent on
