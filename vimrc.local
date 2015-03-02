@@ -48,6 +48,7 @@
   " colors
   Bundle 'altercation/vim-colors-solarized.git'
   Bundle 'tjdunklee/vim-colorschemes'
+  Bundle 'morhetz/gruvbox'
 
   call vundle#end()
   filetype plugin indent on
@@ -98,7 +99,7 @@
   set wildmode=full "complete first full match
 
   if has('gui_running')
-    colorscheme codeschool
+    colorscheme gruvbox
     set titlestring+=\ >\ %{substitute(getcwd(),\ $HOME,\ '~',\ '')} " working directory
 
     set guioptions=egmtc
@@ -108,8 +109,7 @@
       set fuoptions=maxvert,maxhorz
     endif
   else
-    colorscheme solarized 
-    set background=dark
+    colorscheme gruvbox
   endif
 
   " set syntax to HTML for razor files
