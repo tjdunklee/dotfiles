@@ -9,7 +9,7 @@
   call vundle#begin()
 
   " let Vundle manage Vundle
-  Bundle 'gmarik/Vundle.git'
+  Bundle 'gmarik/Vundle.vim'
 
   " system
   Bundle 'ervandew/supertab.git'
