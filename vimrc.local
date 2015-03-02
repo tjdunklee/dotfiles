@@ -5,11 +5,11 @@
   filetype off                  " required
 
   " set the runtime path to include Vundle and initialize
-  set rtp+=~/.vim/bundle/vundle/
+  set rtp+=~/.vim/bundle/Vundle.vim
   call vundle#begin()
 
   " let Vundle manage Vundle
-  Bundle 'gmarik/vundle.git'
+  Bundle 'gmarik/Vundle.git'
 
   " system
   Bundle 'ervandew/supertab.git'
@@ -25,7 +25,6 @@
   Bundle 'surround.vim'
   Bundle 'rstacruz/sparkup.git', {'rtp': 'vim/'}
   Bundle 'scrooloose/nerdcommenter.git'
-  Bundle 'tsaleh/vim-matchit.git'
   Bundle 'nathanaelkane/vim-indent-guides.git'
   Bundle 'editorconfig/editorconfig-vim.git'
   Bundle 'SirVer/ultisnips'
@@ -97,6 +96,11 @@
   set iskeyword-=_
 
   set wildmode=full "complete first full match
+
+  " Load matchit.vim, but only if the user hasn't installed a newer version.
+  if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
+    runtime! macros/matchit.vim
+  endif
 
   if has('gui_running')
     colorscheme gruvbox

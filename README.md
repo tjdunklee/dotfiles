@@ -13,7 +13,7 @@ dotfiles](https://github.com/space150/dotfiles) that these depend on. Then you c
 ```
 mkdir tjdunklee
 cd tjdunklee
-git clone https://github.com/tjdunklee/dotfiles.git
+git clone git@github.com:tjdunklee/dotfiles.git
 cd
 rcup -d tjdunklee/dotfiles -x README.md
 ```
