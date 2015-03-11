@@ -205,6 +205,9 @@
   let g:UltiSnipsJumpForwardTrigger="<c-b>"
   let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
+  " BufExplorer
+  let g:bufExplorerShowDirectories=0
+
   " JSON
   let g:vim_json_syntax_conceal = 0
 
