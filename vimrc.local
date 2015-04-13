@@ -19,7 +19,6 @@
   Bundle 'yegappan/mru'
   Bundle 'vim-scripts/netrw.vim.git'
   Bundle 'mileszs/ack.vim.git'
-  Bundle 'mhinz/vim-startify.git'
 
   " editing
   Bundle 'surround.vim'
@@ -211,35 +210,3 @@
 
   nmap <leader>t :TagbarToggle<CR>
 
-
-"======================================================="
-" Startify Fun Times
-"======================================================="
-  let g:startify_list_order = [
-    \ [' Stuff I Play With'],
-    \ 'bookmarks',
-    \ [' Recently Hacked Files'],
-    \ 'files',
-    \ [' Saved Sessions'],
-    \ 'sessions'
-    \ ]
-
-  let g:startify_bookmarks = [
-    \ '~/dotfiles/vimrc.local',
-    \ '~/.bash_profile',
-    \ '~/.bash_profile.private',
-    \ '~/.vim/UltiSnips/all.snippets'
-    \ ]
-
-  let g:startify_custom_header = [
-    \'  ########  ##     ## ##    ## ##    ##  ######   ',
-    \'  ##     ## ##     ## ###   ## ##   ##  ##    ##  ',
-    \'  ##     ## ##     ## ####  ## ##  ##   ##        ',
-    \'  ##     ## ##     ## ## ## ## #####     ######   ',
-    \'  ##     ## ##     ## ##  #### ##  ##         ##  ',
-    \'  ##     ## ##     ## ##   ### ##   ##  ##    ##  ',
-    \'  ########   #######  ##    ## ##    ##  ######   ',
-    \'                                                  ',
-    \'                                                  ',
-    \'                                                  ',
-    \ ]
