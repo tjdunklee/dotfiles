@@ -35,6 +35,7 @@
   Bundle 'mustache/vim-mode.git'
   Bundle 'tjdunklee/vim-csharp.git'
   Bundle 'wookiehangover/jshint.vim'
+  Bundle 'hail2u/vim-css3-syntax'
 
   " git
   Bundle 'tpope/vim-git'
@@ -47,6 +48,7 @@
   Bundle 'altercation/vim-colors-solarized.git'
   Bundle 'tjdunklee/vim-colorschemes'
   Bundle 'morhetz/gruvbox'
+  Bundle 'tomasr/molokai'
 
   call vundle#end()
   filetype plugin indent on
@@ -102,7 +104,7 @@
   endif
 
   if has('gui_running')
-    colorscheme gruvbox
+    colorscheme molokai
     set titlestring+=\ >\ %{substitute(getcwd(),\ $HOME,\ '~',\ '')} " working directory
 
     set guioptions=egmtc
@@ -112,7 +114,7 @@
       set fuoptions=maxvert,maxhorz
     endif
   else
-    colorscheme gruvbox
+    colorscheme molokai
   endif
 
   " set syntax to HTML for razor files
