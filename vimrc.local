@@ -16,7 +16,7 @@
   Bundle 'Lokaltog/vim-powerline.git'
   Bundle 'majutsushi/tagbar'
   Bundle 'kien/ctrlp.vim'
-  Bundle 'c9s/bufexplorer'
+  Bundle 'yegappan/mru'
   Bundle 'vim-scripts/netrw.vim.git'
   Bundle 'mileszs/ack.vim.git'
   Bundle 'mhinz/vim-startify.git'
@@ -199,14 +199,12 @@
   let g:Powerline_symbols = 'fancy'
   let g:ctrlp_map = '<leader>f'
   let g:sparkupExecuteMapping = '<leader>e'
+  map <leader>mr :MRU<CR>
 
   " UltiSnips
   let g:UltiSnipsExpandTrigger="<tab>"
   let g:UltiSnipsJumpForwardTrigger="<c-b>"
   let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
-  " BufExplorer
-  let g:bufExplorerShowDirectories=0
 
   " JSON
   let g:vim_json_syntax_conceal = 0

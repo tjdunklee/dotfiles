@@ -48,9 +48,9 @@ Fuzzy file, buffer, mru and tag finder
 A parser for a condensed HTML format.  
 **Bound to:** `,e`
 
-#### [bufexplorer](https://github.com/c9s/bufexplorer)
-With bufexplorer, you can quickly and easily switch between buffers.  
-**Bound to:** `,be` 
+#### [mru](https://github.com/yegappan/mru)
+Provides an easy access to a list of recently opened/edited files in Vim.
+**Bound to:** `,mr`
 
 #### [matchit](https://github.com/mirell/vim-matchit)
 Import of Benji Fisher's matchit vim plugin, with history, extends `%` support.
