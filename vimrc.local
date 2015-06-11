@@ -124,9 +124,8 @@
 "======================================================="
 " Key Bindings 
 "======================================================="
-  " basic settings, [leader, secondary <ESC>, tertiary <ESC>, reindent, file-explorer]
+  " basic settings, [leader, secondary <ESC>, reindent, file-explorer]
   let mapleader = ","
-  imap <S-space> <Esc>
   imap jk <Esc>
   map <leader>= <c-W>=
   map <leader>n :NERDTreeToggle<CR>
