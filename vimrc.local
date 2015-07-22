@@ -36,6 +36,7 @@
   Bundle 'tjdunklee/vim-csharp.git'
   Bundle 'wookiehangover/jshint.vim'
   Bundle 'hail2u/vim-css3-syntax'
+  Bundle 'tpope/vim-liquid'
 
   " git
   Bundle 'tpope/vim-git'
