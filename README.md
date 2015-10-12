@@ -11,11 +11,12 @@ First you need to follow clone and install the [space150
 dotfiles](https://github.com/space150/dotfiles) that these depend on. Then you can proceed with:
 
 ```
-mkdir tjdunklee
-cd tjdunklee
-git clone git@github.com:tjdunklee/dotfiles.git
 cd
-rcup -d tjdunklee/dotfiles -x README.md
+cd dotfiles
+mkdir tjdunklee
+cd
+git clone git@github.com:tjdunklee/dotfiles.git dotfiles/tjdunklee/
+rcup -d dotfiles/tjdunklee/ -x README.md
 ```
 
 If you don't have it already, be sure to install Vundle.
