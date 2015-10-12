@@ -111,7 +111,7 @@
     set guioptions=egmtc
 
     if has('mac')
-      set guifont=Inconsolata-dz\ For\ Powerline:h13
+      set guifont=Menlo:h13
       set fuoptions=maxvert,maxhorz
     endif
   else
