@@ -12,12 +12,8 @@
   Bundle 'gmarik/Vundle.vim'
 
   " system
-  Bundle 'ervandew/supertab.git'
-  Bundle 'Lokaltog/vim-powerline.git'
-  Bundle 'majutsushi/tagbar'
-  Bundle 'kien/ctrlp.vim'
-  Bundle 'yegappan/mru'
-  Bundle 'vim-scripts/netrw.vim.git'
+  Bundle 'vim-airline/vim-airline'
+  Bundle 'ctrlpvim/ctrlp.vim'
   Bundle 'mileszs/ack.vim.git'
 
   " editing
@@ -31,16 +27,7 @@
   " syntax
   Bundle 'elzr/vim-json.git'
   Bundle 'pangloss/vim-javascript'
-  Bundle 'kchmck/vim-coffee-script'
-  Bundle 'mustache/vim-mode.git'
-  Bundle 'tjdunklee/vim-csharp.git'
-  Bundle 'wookiehangover/jshint.vim'
   Bundle 'hail2u/vim-css3-syntax'
-  Bundle 'tpope/vim-liquid'
-
-  " git
-  Bundle 'tpope/vim-git'
-  Bundle 'tpope/vim-fugitive'
 
   " nerdtree
   Bundle 'scrooloose/nerdtree.git'
@@ -49,7 +36,6 @@
   Bundle 'altercation/vim-colors-solarized.git'
   Bundle 'tjdunklee/vim-colorschemes'
   Bundle 'morhetz/gruvbox'
-  Bundle 'tomasr/molokai'
 
   call vundle#end()
   filetype plugin indent on
@@ -105,18 +91,17 @@
   endif
 
   if has('gui_running')
-    colorscheme molokai
     set titlestring+=\ >\ %{substitute(getcwd(),\ $HOME,\ '~',\ '')} " working directory
 
     set guioptions=egmtc
 
     if has('mac')
-      set guifont=Menlo:h13
       set fuoptions=maxvert,maxhorz
     endif
-  else
-    colorscheme molokai
   endif
+
+  colorscheme gruvbox
+  set guifont=Meslo\ LG\ M\ DZ\ for\ Powerline:h13
 
   " set syntax to HTML for razor files
   au BufReadPost *.cshtml set syntax=html
@@ -197,10 +182,7 @@
   nnoremap <silent> <leader><leader>c :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>:retab<CR>
 
   " Plugin Mappings
-  let g:Powerline_symbols = 'fancy'
   let g:ctrlp_map = '<leader>f'
-  let g:sparkupExecuteMapping = '<leader>e'
-  map <leader>mr :MRU<CR>
 
   " UltiSnips
   let g:UltiSnipsExpandTrigger="<tab>"
@@ -210,5 +192,5 @@
   " JSON
   let g:vim_json_syntax_conceal = 0
 
-  nmap <leader>t :TagbarToggle<CR>
-
+  " AIRLINE
+  let g:airline_powerline_fonts = 1
