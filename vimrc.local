@@ -33,9 +33,8 @@
   Bundle 'scrooloose/nerdtree.git'
 
   " colors
-  Bundle 'altercation/vim-colors-solarized.git'
+  Bundle 'tomasr/molokai'
   Bundle 'tjdunklee/vim-colorschemes'
-  Bundle 'morhetz/gruvbox'
 
   call vundle#end()
   filetype plugin indent on
@@ -100,7 +99,7 @@
     endif
   endif
 
-  colorscheme gruvbox
+  colorscheme molokai
   set guifont=Meslo\ LG\ M\ DZ\ for\ Powerline:h13
 
   " set syntax to HTML for razor files
