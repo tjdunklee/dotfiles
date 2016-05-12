@@ -49,20 +49,9 @@ Fuzzy file, buffer, mru and tag finder
 A parser for a condensed HTML format.  
 **Bound to:** `,e`
 
-#### [mru](https://github.com/yegappan/mru)
-Provides an easy access to a list of recently opened/edited files in Vim.
-**Bound to:** `,mr`
-
-#### [matchit](https://github.com/mirell/vim-matchit)
-Import of Benji Fisher's matchit vim plugin, with history, extends `%` support.
-
 #### [nerdcommenter](https://github.com/scrooloose/nerdcommenter)
 The premier commenting tool.  
 **Bound to:** `c<space>`
-
-#### [easymotion](https://github.com/Lokaltog/vim-easymotion)
-Vim motions on speed!  
-**Bound to:** `,,w` `,,t`
 
 #### [ack](https://github.com/mileszs/ack.vim)
 Vim plugin for the Perl module / CLI script 'ack  
@@ -72,15 +61,6 @@ Vim plugin for the Perl module / CLI script 'ack
 A Vim plugin for visually displaying indent levels in code  
 **Bound to:** `,ig`
 
-#### [supertab](https://github.com/ervandew/supertab)
-Perform all your vim insert mode completions with Tab.
-
-#### [powerline](https://github.com/Lokaltog/vim-powerline)
+#### [airline](https://github.com/vim-airline/vim-airline)
 Mega overhaul of the statusbar, colorized per mode.
-
-#### [fugitive](https://github.com/tpope/vim-fugitive)
-fugitive.vim: a Git wrapper so awesome, it should be illegal
-
-#### [vim-git](https://github.com/tpope/vim-git)
-Vim Git runtime files
 
