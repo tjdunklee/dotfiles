@@ -28,6 +28,7 @@
   Bundle 'elzr/vim-json.git'
   Bundle 'pangloss/vim-javascript'
   Bundle 'hail2u/vim-css3-syntax'
+  Bundle 'isRuslan/vim-es6'
 
   " nerdtree
   Bundle 'scrooloose/nerdtree.git'
