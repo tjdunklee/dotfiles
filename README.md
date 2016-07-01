@@ -32,6 +32,11 @@ When MacVim is running, make sure to run Vundle to grab all the plugins.
 :BundleInstall
 ```
 
+You will need to make sure you have the Powerline fonts installed:
+
+1. Make sure you installed power line fonts: https://github.com/powerline/fonts
+2. Go to iTerm settings -> Profiles -> Text and make sure you have selected any power line font specified in VIMRC
+
 ## What's Included
 
 #### [nerdtree](https://github.com/scrooloose/nerdtree)
