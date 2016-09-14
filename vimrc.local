@@ -23,6 +23,7 @@
   Bundle 'nathanaelkane/vim-indent-guides.git'
   Bundle 'editorconfig/editorconfig-vim.git'
   Bundle 'SirVer/ultisnips'
+  Bundle 'christoomey/vim-titlecase'
 
   " syntax
   Bundle 'elzr/vim-json.git'
